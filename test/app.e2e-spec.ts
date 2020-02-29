@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { AppModule } from '../src/config/app.module';
 
-describe('AppController (e2e)', () => {
+describe('ClientController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -19,6 +19,19 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Hello');
+  });
+
+  it('create a client using model and post method', () => {
+    return request(app.getHttpServer())
+        .post('/')
+        .type('form')
+        .send({ name: 'André Kitano da Silva', cpf: 123456 })
+        .expect(201)
+        .expect('André Kitano da Silva')
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });
