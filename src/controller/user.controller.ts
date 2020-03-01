@@ -1,18 +1,18 @@
 import {Body, Controller, Get, Post} from '@nestjs/common';
-import { ClientRepository } from '../repository/client.repository';
-import ClientModel from "../model/client.model";
+import { UserRepository } from '../repository/user.repository';
+import UserModel from "../model/user.model";
 
 @Controller()
-export class ClientController {
-  constructor(private readonly appService: ClientRepository) {}
+export class UserController {
+  constructor(private readonly appService: UserRepository) {}
 
   @Get()
   getAllClient() {
-    return this.appService.getAll();
+    return this.appService.findAll();
   }
 
   @Post()
-  createClient(@Body() client: ClientModel): string {
+  createClient(@Body() client: UserModel): string {
     return client.name;
   }
 }
