@@ -6,8 +6,7 @@ const mongo = new MongoMemoryServer();
 export default (customOpts: any = {}): TypeOrmModuleAsyncOptions => {
   return {
     useFactory: async () => {
-      const port = await mongo.getPort();
-      const database = await mongo.getDbName();
+      const [port, database] = await Promise.all([mongo.getPort(), mongo.getDbName()]);
 
       return {
         type: 'mongodb',
