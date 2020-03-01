@@ -73,7 +73,7 @@ describe('UsersService', () => {
     expect(clients.length).toBeGreaterThan(1);
   });
 
-  beforeAll(async () => {
+  afterAll(async () => {
     console.log('all rows will be deleted');
     await service.deleteAll();
   });

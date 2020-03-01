@@ -17,7 +17,7 @@ export class UserRepository {
     return this.userRepository.find();
   }
 
-  deleteAll() {
+  deleteAll(): Promise<void> {
     return this.userRepository.clear()
   }
 
