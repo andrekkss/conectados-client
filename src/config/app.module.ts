@@ -13,6 +13,8 @@ import { UserModule } from './user.module';
       entities: [
         UserEntity
       ],
+      keepConnectionAlive: true,
+      useUnifiedTopology: true
     }
   ), UserModule],
 })
