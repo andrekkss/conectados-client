@@ -1,6 +1,6 @@
 import { ObjectID } from 'typeorm';
 
-export default interface  ClientModel {
+export default interface  UserModel {
     id?: ObjectID;
     name: string;
     cpf: number,

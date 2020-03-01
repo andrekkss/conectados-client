@@ -1,8 +1,8 @@
-import { Entity, Column, ObjectIdColumn, BeforeInsert, ObjectID, BeforeUpdate } from 'typeorm';
-import UserModel from '../../model/client.model';
+import { Entity, Column, ObjectIdColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
+import UserModel from '../../model/user.model';
 
 @Entity('Client')
-export class ClientEntity {
+export class UserEntity {
   @ObjectIdColumn()
   id: UserModel['id'];
 

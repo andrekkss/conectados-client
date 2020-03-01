@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../src/config/app.module';
 
-describe('ClientController (e2e)', () => {
+describe('UserController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -29,6 +29,13 @@ describe('ClientController (e2e)', () => {
         .send({ name: 'André Kitano da Silva', cpf: 123456 })
         .expect(201)
         .expect('André Kitano da Silva')
+  });
+
+  it('should get all users from get method', () => {
+    return request(app.getHttpServer())
+      .get('/')
+      .expect(200)
+
   });
 
   afterAll(async () => {
