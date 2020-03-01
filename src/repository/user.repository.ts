@@ -13,7 +13,7 @@ export class UserRepository {
     return this.userRepository.create(user);
   }
 
-  findAll() {
+  findAll(): Promise<UserEntity[]> {
     return this.userRepository.find();
   }
 
