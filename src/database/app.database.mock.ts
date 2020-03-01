@@ -15,6 +15,8 @@ export default (customOpts: any = {}): TypeOrmModuleAsyncOptions => {
         port,
         database,
         entities,
+        keepConnectionAlive: true,
+        useUnifiedTopology: true,
         ...customOpts,
       };
     },
