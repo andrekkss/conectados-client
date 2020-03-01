@@ -13,7 +13,7 @@ export class UserController {
   }
 
   @Post()
-  createClient(@Body() client: UserModel): string {
-    return client.name;
+  createClient(@Body() client: UserModel): UserEntity {
+    return this.appService.create(client);
   }
 }

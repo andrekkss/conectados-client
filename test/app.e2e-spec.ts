@@ -4,6 +4,11 @@ import * as request from 'supertest';
 import { AppModule } from '../src/config/app.module';
 import { UserRepository } from '../src/repository/user.repository';
 
+const userMock = {
+   name: 'André Kitano da Silva',
+   cpf: 123456
+};
+
 describe('UserController (e2e)', () => {
   let app: INestApplication;
   let userRepository = {
@@ -26,9 +31,9 @@ describe('UserController (e2e)', () => {
     return request(app.getHttpServer())
       .post('/')
       .type('form')
-      .send({ name: 'André Kitano da Silva', cpf: 123456 })
+      .send(userMock)
       .expect(201)
-      .expect('André Kitano da Silva');
+      .expect(userMock);
   });
 
   it('should get all users from get method', async () => {
