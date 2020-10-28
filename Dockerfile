@@ -7,5 +7,7 @@ RUN npm install
 
 COPY . .
 
+RUN npm run-script build
+
 EXPOSE 3002
-CMD ['npm', 'start']
+CMD ['npm', 'run-script', 'start:prod']
