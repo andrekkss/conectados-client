@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TYPES = {
-    PostRepositoryImpl: Symbol('PostRepositoryImpl'),
+const TYPES = {
+    ClientRepositoryImpl: Symbol('ClientRepositoryImpl'),
 };
 exports.default = TYPES;

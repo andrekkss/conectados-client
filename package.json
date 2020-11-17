@@ -1,5 +1,5 @@
 {
-  "name": "conectados-post",
+  "name": "conectados-client",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,17 +9,30 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.8",
+    "@types/helmet": "^4.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "class-validator": "^0.12.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "helmet": "^4.2.0",
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.14",
     "morgan": "^1.9.1",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "@types/mongoose": "^5.10.0",
     "@types/morgan": "^1.7.37",
     "nodemon": "^2.0.2",
-    "typescript": "^3.7.5",
-    "ts-node": "^8.6.2"
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   }
 }
